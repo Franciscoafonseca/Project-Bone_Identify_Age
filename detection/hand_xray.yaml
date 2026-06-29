@@ -1,0 +1,7 @@
+path: D:/Projetos/Investigador/fork_ai/Project-Bone_Identify_Age/data/yolo_dataset
+
+train: images/train
+val: images/val
+
+names:
+  0: hand_wrist_xray
