@@ -1,23 +1,19 @@
+from pathlib import Path
 from ultralytics import YOLO
 
+ROOT = Path(__file__).resolve().parents[1]
 
-def main():
-    # YOLO11n é a versão mais leve. Boa para começar.
-    model = YOLO("yolo11n.pt")
+DATA_YAML = ROOT / "data" / "yolo_dataset" / "data.yaml"
 
-    results = model.train(
-        data="detection/hand_xray.yaml",
-        epochs=50,
-        imgsz=640,
-        batch=4,
-        device="cpu",  # usa 0 se tiveres GPU NVIDIA com CUDA
-        workers=2,
-        project="runs/yolo_hand",
-        name="yolo11n_hand_wrist",
-    )
+model = YOLO("yolo11n.pt")
 
-    print(results)
-
-
-if __name__ == "__main__":
-    main()
+model.train(
+    data=str(DATA_YAML),
+    epochs=50,
+    imgsz=640,
+    batch=4,
+    device="cpu",
+    workers=0,
+    project=str(ROOT / "runs" / "detect"),
+    name="yolo_hand",
+)

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+# Dados médicos / imagens originais
+data/
+
+# Dataset YOLO com imagens e labels
+data/yolo_dataset/images/
+data/yolo_dataset/labels/
+data/yolo_dataset/*.cache
+
+# Resultados de treino/predição
+runs/
+
+# Pesos base descarregados automaticamente
+yolo11n.pt
+yolo11s.pt
+yolo11m.pt
+yolo11l.pt
+yolo11x.pt
+
+# Sistema
+.DS_Store
+Thumbs.db
